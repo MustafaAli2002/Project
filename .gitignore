@@ -1,0 +1,8 @@
+# Node modules
+frontend/node_modules/
+
+# Laravel stuff
+backend/vendor/
+backend/storage/*.key
+.env
+

@@ -1,0 +1,154 @@
+/* ProfileEdit.css */
+
+/* Container - جعلنا الاسم صحيحاً */
+.profile-edit-compact {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Header - تحسين المسافات */
+.profile-edit-compact .edit-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-edit-compact .edit-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+/* Back Button - تأثيرات أكثر سلاسة */
+.profile-edit-compact .back-button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #4a5568;
+}
+
+.profile-edit-compact .back-button:hover {
+  background: #edf2f7;
+  transform: translateX(-3px);
+}
+
+/* Form - تنظيم المسافات بين العناصر */
+.profile-edit-compact .compact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Rows - تصميم متجاوب أفضل */
+.profile-edit-compact .form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .profile-edit-compact .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Input Groups - تحسين وضع الأيقونات */
+.profile-edit-compact .form-group {
+  position: relative;
+  flex: 1;
+}
+
+.profile-edit-compact .input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #718096;
+  font-size: 1.1rem;
+  z-index: 2;
+}
+
+/* Input Fields - تحسين المظهر العام */
+.profile-edit-compact input,
+.profile-edit-compact select {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1a202c;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.profile-edit-compact input:focus,
+.profile-edit-compact select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+  background-color: #ffffff;
+}
+
+/* Select Dropdown - تحسين السهم */
+.profile-edit-compact select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+/* Save Button - مظهر أكثر جاذبية */
+.profile-edit-compact .save-btn {
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-edit-compact .save-btn:hover {
+  background: #3182ce;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.2);
+}
+
+.profile-edit-compact .save-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design - تحسينات للجوال */
+@media (max-width: 640px) {
+  .profile-edit-compact {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 12px;
+  }
+  
+  .profile-edit-compact input,
+  .profile-edit-compact select {
+    padding: 0.75rem 1rem 0.75rem 2.25rem;
+  }
+}

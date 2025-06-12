@@ -1,0 +1,319 @@
+.hard-challenge-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .quiz-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    border: 1px solid #eaeaea;
+  }
+  
+  .quiz-header {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .quiz-header h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #FFC107, #FFA000);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
+  
+  .question-section h3 {
+    font-size: 20px;
+    color: #34495e;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+  
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .option-btn {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .option-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #FFC107;
+  }
+  
+  .option-btn:disabled {
+    cursor: not-allowed;
+  }
+  
+  .option-btn.correct {
+    background-color: #FFC107;
+    color: white;
+    border-color: #FFC107;
+    animation: pulse 0.5s;
+  }
+  
+  .option-btn.wrong {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .result-card {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .result-card h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+  
+  .score-circle {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background: conic-gradient(#FFC107 0% 70%, #f0f0f0 70% 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .score-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .score-percentage {
+    font-size: 20px;
+    color: #7f8c8d;
+    margin-top: 5px;
+  }
+  
+  .restart-btn {
+    background: linear-gradient(90deg, #FFC107, #FFA000);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+  }
+  
+  .restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+  }
+  
+  @media (max-width: 600px) {
+    .options-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .quiz-card {
+      padding: 20px;
+    }
+    
+    .quiz-header h2 {
+      font-size: 20px;
+    }
+    
+    .question-section h3 {
+      font-size: 18px;
+    }
+    
+    .option-btn {
+      padding: 12px;
+      font-size: 14px;
+    }
+    
+    .score-circle {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .score-text {
+      font-size: 28px;
+    }
+  }
+/* إضافة تأثيرات للعملات عند إضافة عملة جديدة */
+@keyframes coinBlink {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.coin-amount {
+  display: inline-block;
+  animation: coinBlink 0.5s ease-in-out;
+}
+
+/* إضافة هذه الأنماط الجديدة لملف easychallenge.css */
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.coins-counter, .score-counter {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 193, 7, 0.1);
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.coins-counter {
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.score-counter {
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.coin-icon {
+  margin-right: 8px;
+  color: #FFC107;
+}
+
+.coin-amount {
+  color: #FFA000;
+}
+
+.score-label {
+  color: #7f8c8d;
+  margin-right: 8px;
+}
+
+.score-amount {
+  color: #2ecc71;
+}
+
+.coins-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  font-size: 20px;
+  color: #FFA000;
+  background: rgba(255, 193, 7, 0.1);
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.coins-icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.coin-reward {
+  display: inline-block;
+  margin-left: 8px;
+  color: #FFC107;
+  animation: coinPop 0.5s;
+}
+
+@keyframes coinPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.coin-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.coin-animation .coin {
+  font-size: 60px;
+  color: #FFC107;
+  animation: coinFloat 1s ease-out forwards;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+@keyframes coinFloat {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { transform: translateY(-20px) scale(1); opacity: 1; }
+  100% { transform: translateY(-100px) scale(0.8); opacity: 0; }
+}
+
+/* تحسينات للعرض على الجوال */
+@media (max-width: 480px) {
+  .coins-counter, .score-counter {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .coins-summary {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
